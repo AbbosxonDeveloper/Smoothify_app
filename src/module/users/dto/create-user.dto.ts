@@ -14,4 +14,22 @@ export class CreateUserDto {
     @Transform(({value}) => value.trim())
     password: string;
 
+    @IsString()
+    @IsNotEmpty()
+    @Transform(({value}) => value.trim())
+    email: string;
+
+}
+
+export class LoginDto {
+    @IsString()
+    @IsNotEmpty()
+    @Length(8,40)
+    @Transform(({value}) => value.trim())
+    password: string;
+
+    @IsString()
+    @IsNotEmpty()
+    @Transform(({value}) => value.trim())
+    email: string;
 }
